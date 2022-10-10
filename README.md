@@ -14,4 +14,10 @@ Celem jest utworzenie zintegrowanego systemu wspierającego:
 - Prowadzenie ewidencji stanu technicznego pojazdów firmowych
 	
 ## 3. Specyfikacja zdarzeń biznesowych
-Procesy:
+- Przyjęcie zlecenia od klienta
+- Realizacja zlecenia (Przygotowanie trasy przejazdu, przypisanie pojazdu(-ów) do zlecenia)
+- Aktualizacja cennika usług
+- Przygotowanie podsumowania okresowego
+- Przygotowanie rozliczenia dla Urzędu Skarbowego
+- Zmiany w składzie osobowym pracowników
+- Zmiany we flocie pojazdów firmowych
