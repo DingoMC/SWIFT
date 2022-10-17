@@ -48,3 +48,6 @@ Celem jest utworzenie zintegrowanego systemu wspierającego:
 - Zużycie pamięci RAM przez system nie powinno przekraczać 4GB
 - System powinien składować dane w najnowszej wersji bazy danych PostgreSQL
 - Użytkownicy systemu powinni uzyskać dostęp do jego funkcjonalności przy pomocy dowolnej współczesnej przeglądarki stron internetowych
+- Czas uruchomienia po awarii nie powinien przekraczać 1-2 minut
+
+## 6. Historyjki użytkownika
