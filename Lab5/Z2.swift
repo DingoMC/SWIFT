@@ -1,19 +1,19 @@
 import Foundation
 
 print("Podaj liczbe")
-guard let licz = Int(readLine()!) else {
+guard let liczba = Int(readLine()!) else {
     fatalError("To nie jest liczba calkowita")
 }
-if licz >= 1 {
-    print("1")
-    print("1")
+var max : Int = Int(pow(Double(liczba), 0.5)) + 1
+var pierwsza : Bool = true
+
+for i in 2...max {
+    if (liczba % i == 0 && i != liczba) {
+        pierwsza = false
+        print("Liczba nie jest pierwsza")
+        break
+    }
 }
-var i = 1
-var j = 1
-var wynik = i + j
-while wynik < licz {
-    print(wynik)
-    i = j
-    j = wynik
-    wynik = i + j
+if (pierwsza) {
+    print("Liczba jest pierwsza")
 }
