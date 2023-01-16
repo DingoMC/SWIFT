@@ -1,3 +1,5 @@
+import Foundation
+
 enum MathErrors : Error {
     case DivisionBy0
     case SqrtNegative
