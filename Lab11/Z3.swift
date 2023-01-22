@@ -129,8 +129,29 @@ func wczytaj () -> [Student] {
     return tab
 }
 
+func wyswietlNaKierunku (tab: [Student]) -> Void {
+    print("Podaj kierunek", terminator: ": ")
+    let k : String = readLine()!
+    var kier : String = ""
+    for i in Kierunki.allCases {
+        if (k == i.rawValue) {
+            kier = k
+            break
+        }
+    }
+    if (kier == "") {
+        fatalError("Bledny kierunek studiow")
+    }
+    for i in 0..<tab.count {
+        if (tab[i].kierunek == Kierunki(rawValue: kier)!) {
+            tab[i].show()
+        }
+    }
+}
+
 var tab : [Student] = wczytaj()
 for i in 0..<tab.count {
     tab[i].show()
     print(tab[i].mean())
 }
+wyswietlNaKierunku(tab: tab)
