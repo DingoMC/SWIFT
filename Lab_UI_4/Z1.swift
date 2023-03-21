@@ -15,8 +15,23 @@ struct ContentView: View {
                 Text("Basak Kantor").foregroundColor(.white).font(.title)
                 Spacer()
             }.background(.purple)
-            
-            Spacer()
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Gradient(colors: [.blue, .purple]))
+                .overlay(content: {
+                    VStack {
+                        Text("Godziny otwarcia").foregroundColor(.white).fontWeight(.bold)
+                        Text("Pon. - Pt. 8 - 17").foregroundColor(.white)
+                        Text("Sob. 9 - 13").foregroundColor(.white)
+                    }
+                }).frame(height: 100)
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Gradient(colors: [.purple, .blue]))
+                .overlay(content: {
+                    VStack {
+                        Text("Kontakt").foregroundColor(.white).fontWeight(.bold)
+                        Text("basakantor @gmail.com").foregroundColor(.white)
+                    }
+                }).frame(height: 100)
             HStack {
                 Text("Wartosc:")
                 TextField("liczba", text: Binding(
