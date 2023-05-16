@@ -1,0 +1,39 @@
+import SwiftUI
+
+struct ContentView: View {
+    @State var koty = [(i: "kot1", name: "Kot 1"),
+                (i: "kot2", name: "Kot 2"),
+                (i: "kot3", name: "Kot 3"),
+                (i: "kot4", name: "Kot 4"),
+                (i: "kot5", name: "Kot 5")]
+    @State var selection = 0
+    @GestureState var isLongPress = false
+    var body: some View {
+        let longPress = LongPressGesture()
+            .updating($isLongPress, body: {value, state, transaction in state = value})
+        VStack {
+            Spacer()
+            Image(koty[selection].i).gesture(longPress)
+            if (isLongPress) {
+                Text(koty[selection].name)
+            }
+            Text("Dalej >")
+            .gesture(TapGesture()
+                .onEnded() {
+                    selection += 1
+                    if (selection >= koty.count) {
+                        selection = 0
+                    }
+                }
+            )
+            Spacer()
+        }
+        
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
