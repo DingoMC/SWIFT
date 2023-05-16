@@ -18,10 +18,13 @@ struct ContentView: View {
                 ForEach(0..<auta.count) {
                     a in
                     if (!deleted.contains(a)) {
-                        CarView(auto: $auta[a]).gesture(TapGesture()
-                            .onEnded() {
+                        CarView(auto: $auta[a]).swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(action: {
                                 deleted.append(a)
-                            })
+                            }) {
+                                Image(systemName: "trash")
+                            }
+                        }
                     }
                 }
             }
